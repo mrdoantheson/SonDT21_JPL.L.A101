@@ -32,8 +32,8 @@ public class Book extends Publication {
         return author;
     }
 
-    public void setAuthor(Set<String> author) {
-        this.author = author;
+    public void setAuthor(String author) {
+        this.author.add(author);
     }
 
     @Override
@@ -51,7 +51,7 @@ public class Book extends Publication {
 
         System.out.println("Enter publication date: ");
         SimpleDateFormat sdf_ddMMyy = new SimpleDateFormat("dd-MM-yyyy");
-        Date publicationDate = null;
+        Date publicationDate;
         try {
             publicationDate = sdf_ddMMyy.parse(scanner.nextLine());
         } catch (ParseException e) {
@@ -66,8 +66,6 @@ public class Book extends Publication {
         System.out.println("Enter publication place: ");
         publicationPlace = scanner.nextLine();
         setPublicationPlace(publicationPlace);
-
-        scanner.close();
     }
 
     @Override

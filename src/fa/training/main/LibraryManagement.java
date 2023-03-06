@@ -18,6 +18,7 @@ public class LibraryManagement {
         List<Publication> listOfPublications = new ArrayList<>();
         Scanner scanner = new Scanner(System.in);
         LibraryServices libraryServices = new LibraryServices(listOfPublications);
+
         boolean running = true;
         while (running) {
             System.out.println("====== LIBRARY MANAGEMENT SYSTEM ======");
@@ -42,6 +43,7 @@ public class LibraryManagement {
                     libraryServices.addPublication(magazine);
                 }
                 case 3 -> libraryServices.displayPublicationsByYearAndPublisher(listOfPublications);
+                case 4 -> libraryServices.addAuthorToBook();
                 case 7 -> running = false;
                 default -> System.out.println("Invalid choice, please try again.");
             }

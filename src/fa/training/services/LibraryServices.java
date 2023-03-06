@@ -1,10 +1,9 @@
 package fa.training.services;
 
+import fa.training.entities.Book;
 import fa.training.entities.Publication;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 
 public class LibraryServices {
     public List<Publication> listOfPublications;
@@ -18,6 +17,7 @@ public class LibraryServices {
     public void addPublication(Publication publication) {
         listOfPublications.add(publication);
     }
+
 
     // to display the list of all books and magazines that have the same publication year and publisher
     public void displayPublicationsByYearAndPublisher(List<Publication> publications) {
