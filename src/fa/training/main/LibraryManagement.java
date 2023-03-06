@@ -1,9 +1,6 @@
 package fa.training.main;
 
-import fa.training.entities.Book;
-import fa.training.entities.Magazine;
 import fa.training.entities.Publication;
-import fa.training.services.LibraryServices;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,7 +14,6 @@ public class LibraryManagement {
     public static void main(String[] args) {
         List<Publication> listOfPublications = new ArrayList<>();
         Scanner scanner = new Scanner(System.in);
-        LibraryServices libraryServices = new LibraryServices(listOfPublications);
 
         boolean running = true;
         while (running) {
@@ -33,19 +29,11 @@ public class LibraryManagement {
             int choice = scanner.nextInt();
             switch (choice) {
                 case 1 -> {
-                    Book book = new Book();
-                    book.inputData(scanner);
-                    libraryServices.addPublication(book);
+
                 }
                 case 2 -> {
-                    Magazine magazine = new Magazine();
-                    magazine.inputData(scanner);
-                    libraryServices.addPublication(magazine);
+
                 }
-                case 3 -> libraryServices.displayPublicationsByYearAndPublisher(listOfPublications);
-                case 4 -> libraryServices.addAuthorToBook();
-                case 7 -> running = false;
-                default -> System.out.println("Invalid choice, please try again.");
             }
         }
     }
