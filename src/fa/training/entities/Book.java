@@ -63,6 +63,7 @@ public class Book extends Publication {
         isbn = scanner.nextLine();
         setIsbn(isbn);
 
+        scanner = new Scanner(System.in);
         System.out.println("Enter publication place: ");
         publicationPlace = scanner.nextLine();
         setPublicationPlace(publicationPlace);

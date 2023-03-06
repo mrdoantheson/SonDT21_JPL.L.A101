@@ -1,9 +1,7 @@
 package fa.training.main;
 
-import fa.training.entities.Publication;
+import fa.training.services.LibraryServices;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Scanner;
 
 /**
@@ -11,9 +9,10 @@ import java.util.Scanner;
  */
 
 public class LibraryManagement {
+
     public static void main(String[] args) {
-        List<Publication> listOfPublications = new ArrayList<>();
         Scanner scanner = new Scanner(System.in);
+        LibraryServices libraryServices = new LibraryServices();
 
         boolean running = true;
         while (running) {
@@ -29,11 +28,14 @@ public class LibraryManagement {
             int choice = scanner.nextInt();
             switch (choice) {
                 case 1 -> {
-
+                    libraryServices.addBook();
+                    System.out.println("Add book successfully");
                 }
                 case 2 -> {
-
+                    libraryServices.addMagazine();
+                    System.out.println("Add magazine successfully");
                 }
+                case 3 -> libraryServices.displayPublications();
             }
         }
     }
