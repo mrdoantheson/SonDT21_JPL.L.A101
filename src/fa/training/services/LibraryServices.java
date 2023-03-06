@@ -1,6 +1,5 @@
 package fa.training.services;
 
-import fa.training.entities.Book;
 import fa.training.entities.Publication;
 
 import java.util.*;
@@ -50,6 +49,7 @@ public class LibraryServices {
 
     //add an author to a specific book, if the author existed, the program should print a message “Author existed”, otherwise print “Add successfully”.
     public void addAuthorToBook() {
+        System.out.println("---- Add author to book ----");
         //TODO Auto-generated method stub
     }
 
