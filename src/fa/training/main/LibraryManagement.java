@@ -36,6 +36,7 @@ public class LibraryManagement {
                     System.out.println("Add magazine successfully");
                 }
                 case 3 -> libraryServices.displayPublications();
+                case 4 -> libraryServices.addAuthorToBook();
             }
         }
     }

@@ -40,27 +40,67 @@ public class LibraryServices implements ILibraryServices {
     }
 
     @Override
-    public void addAuthorToBook(String isbn, String author) {
-
+    public void addAuthorToBook() {
+        System.out.println("---- Add author to book ----");
+        System.out.print("Enter book's ISBN: ");
+        String isbn = scanner.nextLine();
+        for (Book book : bookList) {
+            if (book.getIsbn().equals(isbn)) {
+                System.out.println("List of authors: " + book.getAuthor());
+                System.out.println("Enter author's name: ");
+                scanner = new Scanner(System.in);
+                String author = scanner.nextLine();
+                if (book.getAuthor().equals(author)) {
+                    System.out.println("Author already exists!");
+                } else {
+                    book.setAuthor(author);
+                    System.out.println("Author added!");
+                }
+            }
+        }
     }
 
     @Override
-    public Book searchBookByIsbn(String isbn) {
-        return null;
+    public void display10MagazineByVolume() {
     }
 
     @Override
-    public List<Book> searchBookByAuthor(String author) {
-        return null;
+    public void searchBook() {
+        System.out.println("---- Search book ----");
+        System.out.print("Search book by (1: ISBN, 2: Author, 3: Publisher): ");
+        int choice = scanner.nextInt();
+        switch (choice) {
+            case 1 -> {
+                System.out.print("Enter ISBN to search: ");
+                String isbn = scanner.nextLine();
+                for (Book book : bookList) {
+                    if (book.getIsbn().equals(isbn)) {
+                        book.display();
+                    }
+                }
+            }
+            case 2 -> {
+                System.out.print("Enter author to search: ");
+                scanner = new Scanner(System.in);
+                String author = scanner.nextLine();
+                for (Book book : bookList) {
+                    if (book.getAuthor().contains(author)) {
+                        book.display();
+                    }
+                }
+            }
+            case 3 -> {
+                System.out.print("Enter publisher to search:: ");
+                String publisher = scanner.nextLine();
+                scanner = new Scanner(System.in);
+                for (Book book : bookList) {
+                    if (book.getPublisher().contains(publisher)) {
+                        book.display();
+                    }
+                }
+            }
+        }
     }
 
-    @Override
-    public List<Magazine> getTopMagazines() {
-        return null;
-    }
 
-    @Override
-    public List<Book> searchBookByPublisher(String publisher) {
-        return null;
-    }
 }

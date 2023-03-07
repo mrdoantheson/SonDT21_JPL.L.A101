@@ -6,21 +6,19 @@ import fa.training.entities.Magazine;
 import java.util.List;
 
 public interface ILibraryServices {
+    //add a new book.
     void addBook();
 
+    //add a new magazine
     void addMagazine();
 
     //display the list of all books and magazines that have the same publication year and publisher
     void displayPublications();
 
-    void addAuthorToBook(String isbn, String author);
+    //add an author to a specific book
+    void addAuthorToBook();
 
-    Book searchBookByIsbn(String isbn);
+    void display10MagazineByVolume();
 
-    List<Book> searchBookByAuthor(String author);
-
-    List<Magazine> getTopMagazines();
-
-    List<Book> searchBookByPublisher(String publisher);
-}
+    void searchBook();
 
