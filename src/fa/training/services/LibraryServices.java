@@ -3,10 +3,7 @@ package fa.training.services;
 import fa.training.entities.Book;
 import fa.training.entities.Magazine;
 
-import java.util.ArrayList;
-import java.util.Comparator;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 
 public class LibraryServices implements ILibraryServices {
     Scanner scanner = new Scanner(System.in);
@@ -67,12 +64,14 @@ public class LibraryServices implements ILibraryServices {
         if (magazineList.isEmpty()) {
             System.out.println("No magazine found.");
         } else {
+            System.out.println("---- Display 10 magazines by volume ----");
             magazineList.sort(Comparator.comparing(Magazine::getVolumn));
-            for (Magazine magazine : magazineList) {
-                magazine.display();
+            for (Magazine magazines : magazineList.subList(0, Math.min(magazineList.size(), 10))) {
+                magazines.display();
             }
         }
     }
+
 
     @Override
     public void searchBook() {
