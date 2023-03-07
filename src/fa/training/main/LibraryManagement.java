@@ -7,9 +7,7 @@ import java.util.Scanner;
 /**
  * @author SonDT21
  */
-
 public class LibraryManagement {
-
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         LibraryServices libraryServices = new LibraryServices();

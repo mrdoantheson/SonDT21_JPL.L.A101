@@ -8,7 +8,6 @@ import java.util.*;
 /**
  * @author SonDT21
  */
-
 public class LibraryServices implements ILibraryServices {
     Scanner scanner = new Scanner(System.in);
     List<Magazine> magazineList = new ArrayList<>();
