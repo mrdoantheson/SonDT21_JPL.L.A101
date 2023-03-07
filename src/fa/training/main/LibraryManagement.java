@@ -37,6 +37,8 @@ public class LibraryManagement {
                 }
                 case 3 -> libraryServices.displayPublications();
                 case 4 -> libraryServices.addAuthorToBook();
+                case 6 -> libraryServices.searchBook();
+                case 7 -> running = false;
             }
         }
     }

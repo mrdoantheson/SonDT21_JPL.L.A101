@@ -4,6 +4,7 @@ import fa.training.entities.Book;
 import fa.training.entities.Magazine;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Scanner;
 
@@ -60,8 +61,12 @@ public class LibraryServices implements ILibraryServices {
         }
     }
 
+    //display the list of top 10 magazines which have the largest volume
     @Override
-    public void display10MagazineByVolume() {
+    public List<Magazine> display10MagazineByVolume() {
+        List<Magazine> sortedMagazines = new ArrayList<>();
+        sortedMagazines.sort(Comparator.comparing(Magazine::getVolumn));
+        return null;
     }
 
     @Override
@@ -71,6 +76,7 @@ public class LibraryServices implements ILibraryServices {
         int choice = scanner.nextInt();
         switch (choice) {
             case 1 -> {
+                scanner = new Scanner(System.in);
                 System.out.print("Enter ISBN to search: ");
                 String isbn = scanner.nextLine();
                 for (Book book : bookList) {
@@ -99,6 +105,7 @@ public class LibraryServices implements ILibraryServices {
                     }
                 }
             }
+            default -> System.out.println("Invalid choice, please try again.");
         }
     }
 

@@ -18,7 +18,7 @@ public interface ILibraryServices {
     //add an author to a specific book
     void addAuthorToBook();
 
-    void display10MagazineByVolume();
+    List<Magazine> display10MagazineByVolume();
 
     void searchBook();
 }
