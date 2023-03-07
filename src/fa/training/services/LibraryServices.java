@@ -5,11 +5,18 @@ import fa.training.entities.Magazine;
 
 import java.util.*;
 
+/**
+ * @author SonDT21
+ */
+
 public class LibraryServices implements ILibraryServices {
     Scanner scanner = new Scanner(System.in);
     List<Magazine> magazineList = new ArrayList<>();
     List<Book> bookList = new ArrayList<>();
 
+    /**
+     * Create a new book
+     */
     @Override
     public void addBook() {
         Book book = new Book();
@@ -17,6 +24,9 @@ public class LibraryServices implements ILibraryServices {
         bookList.add(book);
     }
 
+    /**
+     * Create a new magazine
+     */
     @Override
     public void addMagazine() {
         Magazine magazine = new Magazine();
@@ -58,7 +68,9 @@ public class LibraryServices implements ILibraryServices {
         }
     }
 
-    //display the list of top 10 magazines which have the largest volume
+    /**
+     * Display the list of top 10 magazines which have the largest volume
+     */
     @Override
     public void display10MagazineByVolume() {
         if (magazineList.isEmpty()) {
