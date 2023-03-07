@@ -63,10 +63,15 @@ public class LibraryServices implements ILibraryServices {
 
     //display the list of top 10 magazines which have the largest volume
     @Override
-    public List<Magazine> display10MagazineByVolume() {
-        List<Magazine> sortedMagazines = new ArrayList<>();
-        sortedMagazines.sort(Comparator.comparing(Magazine::getVolumn));
-        return null;
+    public void display10MagazineByVolume() {
+        if (magazineList.isEmpty()) {
+            System.out.println("No magazine found.");
+        } else {
+            magazineList.sort(Comparator.comparing(Magazine::getVolumn));
+            for (Magazine magazine : magazineList) {
+                magazine.display();
+            }
+        }
     }
 
     @Override
