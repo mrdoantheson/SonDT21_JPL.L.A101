@@ -21,4 +21,5 @@ public interface ILibraryServices {
     void display10MagazineByVolume();
 
     void searchBook();
+}
 
