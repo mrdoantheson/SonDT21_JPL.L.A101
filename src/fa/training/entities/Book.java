@@ -14,7 +14,7 @@ import java.util.Set;
 public class Book extends Publication {
     private String isbn;
     private String publicationPlace;
-    private Set<String> author = new HashSet<>();
+    private final Set<String> author = new HashSet<>();
 
     public String getIsbn() {
         return isbn;
@@ -42,8 +42,6 @@ public class Book extends Publication {
 
     /**
      * Create a new book
-     *
-     * @param scanner
      */
     @Override
     public void inputData(Scanner scanner) {
