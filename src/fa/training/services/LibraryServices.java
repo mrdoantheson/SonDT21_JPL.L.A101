@@ -2,16 +2,20 @@ package fa.training.services;
 
 import fa.training.entities.Book;
 import fa.training.entities.Magazine;
+import fa.training.entities.Publication;
 
 import java.util.*;
 
 /**
  * @author SonDT21
+ *
+ * version 1.0
  */
 public class LibraryServices implements ILibraryServices {
     Scanner scanner = new Scanner(System.in);
     List<Magazine> magazineList = new ArrayList<>();
     List<Book> bookList = new ArrayList<>();
+    List <Publication> publications = new ArrayList<>();
 
     /**
      * Create a new book
@@ -21,6 +25,7 @@ public class LibraryServices implements ILibraryServices {
         Book book = new Book();
         book.inputData(scanner);
         bookList.add(book);
+        publications.add(book);
     }
 
     /**
@@ -31,21 +36,33 @@ public class LibraryServices implements ILibraryServices {
         Magazine magazine = new Magazine();
         magazine.inputData(scanner);
         magazineList.add(magazine);
+        publications.add(magazine);
     }
 
+    /**
+     * Display all books and magazines that have the same publication year and publisher
+     */
     @Override
     public void displayPublications() {
-        for (Book book : bookList) {
-            for (Magazine magazine : magazineList) {
-                if (book.getPublicationYear() == magazine.getPublicationYear() && book.getPublisher().equals(magazine.getPublisher())) {
-                    book.display();
-                    magazine.display();
-                }
+        System.out.println("---- Display the list of all books and magazines that have the same publication year and publisher ----");
+
+        scanner = new Scanner(System.in);
+        System.out.println("Enter the publisher: ");
+        String publisher = scanner.nextLine();
+
+        System.out.println("Enter the publication year: ");
+        int publisherYear = scanner.nextInt();
+
+        for (Publication publication : publications) {
+            if (publication.getPublicationYear() == publisherYear && publication.getPublisher().equals(publisher)) {
+                publication.display();
             }
         }
-
     }
 
+    /**
+     * Add an author to a specific book
+     */
     @Override
     public void addAuthorToBook() {
         System.out.println("---- Add author to book ----");
@@ -83,7 +100,9 @@ public class LibraryServices implements ILibraryServices {
         }
     }
 
-
+    /**
+     * Search book by isbn, author, publisher
+     */
     @Override
     public void searchBook() {
         System.out.println("---- Search book ----");

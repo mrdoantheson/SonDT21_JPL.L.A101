@@ -38,6 +38,7 @@ public class LibraryManagement {
                 case 5 -> libraryServices.display10MagazineByVolume();
                 case 6 -> libraryServices.searchBook();
                 case 7 -> running = false;
+                default -> System.out.println("Invalid choice, please try again.");
             }
         }
     }

@@ -38,6 +38,8 @@ public class Magazine extends Publication {
         this.edition = edition;
     }
 
+
+
     @Override
     public void inputData(Scanner scanner) {
         System.out.println("----Enter magazine information------");

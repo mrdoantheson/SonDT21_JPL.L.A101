@@ -7,6 +7,10 @@ import java.util.HashSet;
 import java.util.Scanner;
 import java.util.Set;
 
+/**
+ * @author SonDT21
+ */
+
 public class Book extends Publication {
     private String isbn;
     private String publicationPlace;
@@ -36,6 +40,11 @@ public class Book extends Publication {
         this.author.add(author);
     }
 
+    /**
+     * Create a new book
+     *
+     * @param scanner
+     */
     @Override
     public void inputData(Scanner scanner) {
         System.out.println("----Enter book information------");
